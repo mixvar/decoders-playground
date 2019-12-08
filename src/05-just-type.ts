@@ -1,22 +1,19 @@
 import { assertType } from "typescript-is";
 
 export type Cat = {
-  name: string;
+  name?: string;
   color: "black" | "white" | "other";
   livesLeft: number;
+  masters: string[];
 };
 
 const json: unknown = {
-  name: "Filemon",
-  color: "black",
-  livesLeft: 7
-};
-const cat = assertType<Cat>(json);
-console.log(`cat decoded! color is ${cat.color}`);
-
-assertType<Cat>({
   name: "Behemoth",
-  color: "black"
-}); // validation failed at $: expected 'livesLeft' in object
+  color: "black",
+  livesLeft: 7,
+  masters: ["Woland"]
+};
 
-assertType<Cat>(""); // validation failed at $: expected an object
+const cat = assertType<Cat>(json); // magic ✨
+
+console.log(`cat decoded! color is ${cat.color}`);

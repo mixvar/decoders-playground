@@ -8,13 +8,13 @@ type catColor =
 
 [@decco]
 type cat = {
-  name: string,
+  name: option(string),
   color: catColor,
-  [@decco.key "lives"]
   livesLeft: int,
+  masters: list(string),
 };
 
-let getColor = cat =>
+let colorToString = cat =>
   switch (cat.color) {
   | Black => "black"
   | White => "white"
@@ -28,19 +28,12 @@ let handleCatJson = json => {
   (
     switch (cat_decode(json)) {
     | Result.Error(err) => formatError(err)
-    | Result.Ok(cat) => "cat decoded! color is " ++ getColor(cat)
+    | Result.Ok(cat) => "cat decoded! color is " ++ colorToString(cat)
     }
   )
   |> Js.log;
-  ();
 };
 
-{|{"name": "Filemon", "color": ["Black"], "lives": 7}|}
+{|{"name": "Behemoth", "color": ["Black"], "livesLeft": 7, "masters": ["Woland"]}|}
 |> Js.Json.parseExn
 |> handleCatJson;
-
-{|{"name": "Filemon", "color": ["Black"]}|}
-|> Js.Json.parseExn
-|> handleCatJson;
-
-{|""|} |> Js.Json.parseExn |> handleCatJson;
