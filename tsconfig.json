@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      { "transform": "typescript-is/lib/transform-inline/transformer" }
+    ],
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "skipLibCheck": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "es6",
+    "module": "CommonJS"
+  }
+}

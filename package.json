@@ -1,0 +1,26 @@
+{
+  "name": "decoders-playground",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mikołaj Klaman <mklaman@virtuslab.com>",
+  "license": "MIT",
+  "scripts": {
+    "01": "ts-node src/01-typeguards.ts",
+    "02": "ts-node src/02-type-first.ts",
+    "03": "ts-node src/03-decoder-first.ts",
+    "04": "ts-node src/04-fp-ts.ts",
+    "05": "ts-node -C ttypescript src/05-just-type.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "@mojotech/json-type-validation": "^3.1.0",
+    "fp-ts": "^2.2.0",
+    "io-ts": "^2.0.1",
+    "runtypes": "^4.0.3",
+    "ttypescript": "^1.5.8",
+    "typescript-is": "^0.13.1"
+  }
+}
