@@ -5,7 +5,7 @@
   "author": "Mikołaj Klaman <mklaman@virtuslab.com>",
   "license": "MIT",
   "scripts": {
-    "compile": "ttsc -P tsconfig.json",
+    "compile": "ttsc -P tsconfig.json && bsb -make-world",
     "01": "ts-node src/01-typeguards.ts",
     "02": "ts-node src/02-type-first.ts",
     "03": "ts-node src/03-decoder-first.ts",
