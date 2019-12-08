@@ -10,6 +10,7 @@ type catColor =
 type cat = {
   name: string,
   color: catColor,
+  [@decco.key "lives"]
   livesLeft: int,
 };
 
@@ -34,7 +35,7 @@ let handleCatJson = json => {
   ();
 };
 
-{|{"name": "Filemon", "color": ["Black"], "livesLeft": 7}|}
+{|{"name": "Filemon", "color": ["Black"], "lives": 7}|}
 |> Js.Json.parseExn
 |> handleCatJson;
 
