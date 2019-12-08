@@ -4,6 +4,7 @@
       { "transform": "typescript-is/lib/transform-inline/transformer" }
     ],
     "lib": ["esnext", "dom"],
+    "outDir": "dist",
     "moduleResolution": "node",
     "skipLibCheck": false,
     "allowSyntheticDefaultImports": true,

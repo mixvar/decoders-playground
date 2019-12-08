@@ -5,18 +5,22 @@
   "author": "Mikołaj Klaman <mklaman@virtuslab.com>",
   "license": "MIT",
   "scripts": {
+    "compile": "ttsc -P tsconfig.json",
     "01": "ts-node src/01-typeguards.ts",
     "02": "ts-node src/02-type-first.ts",
     "03": "ts-node src/03-decoder-first.ts",
     "04": "ts-node src/04-fp-ts.ts",
-    "05": "ts-node -C ttypescript src/05-just-type.ts"
+    "05": "ts-node -C ttypescript src/05-just-type.ts",
+    "06": "bsb -make-world && node src/JustType.bs.js"
   },
   "devDependencies": {
+    "bs-platform": "^7.0.1",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
   },
   "dependencies": {
     "@mojotech/json-type-validation": "^3.1.0",
+    "decco": "^1.0.0",
     "fp-ts": "^2.2.0",
     "io-ts": "^2.0.1",
     "runtypes": "^4.0.3",
