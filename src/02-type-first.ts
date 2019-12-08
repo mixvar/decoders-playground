@@ -39,3 +39,13 @@ catDecoder.runWithException({
 }); // DecoderError - the key 'livesLeft' is required but was not present, input: { name: 'Behemoth', color: 'black' }
 
 catDecoder.runWithException(""); // DecoderError - expected an object, got a string, input: ''
+
+// encoder is preety simple if we need it
+const catEncoder = (cat: Cat): string =>
+  JSON.stringify({
+    name: cat.name,
+    color: cat.color,
+    meta: {
+      _lives: cat.livesLeft
+    }
+  });

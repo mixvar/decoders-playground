@@ -23,7 +23,7 @@ const json: unknown = {
   color: "black",
   livesLeft: 7
 };
-assertCat(json); // OK!
+assertCat(json);
 console.log(`cat decoded! color is ${json.color}`);
 
 assertCat({
