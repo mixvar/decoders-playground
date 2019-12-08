@@ -11,7 +11,8 @@
     "03": "ts-node src/03-decoder-first.ts",
     "04": "ts-node src/04-fp-ts.ts",
     "05": "ts-node -C ttypescript src/05-just-type.ts",
-    "06": "bsb -make-world && node src/JustType.bs.js"
+    "06": "bsb -make-world && node src/JustType.bs.js",
+    "07": "ts-node src/07-custom-type-first.ts"
   },
   "devDependencies": {
     "bs-platform": "^7.0.1",
