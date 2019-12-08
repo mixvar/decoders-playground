@@ -2,7 +2,7 @@ import * as T from "runtypes";
 
 export const Cat = T.Record({
   color: T.Union(T.Literal("black"), T.Literal("white"), T.Literal("other")),
-  livesLeft: T.Number.withConstraint(it => it >= 0 && it <= 7),
+  livesLeft: T.Number,
   masters: T.Array(T.String)
 }).And(
   T.Partial({
