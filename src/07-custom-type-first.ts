@@ -33,7 +33,7 @@ const cat = catDecoder.runWithException(json);
 console.log(`cat decoded! color is ${cat.color}`);
 
 //
-// encoder is preety simple if we need it
+// encoder is pretty simple if we need it
 //
 
 const catEncoder = (cat: Cat): string =>

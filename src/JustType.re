@@ -22,13 +22,11 @@ let colorToString = cat =>
   };
 
 let handleCatJson = json => {
-  open Decco;
-  let formatError = err =>
-    "DecodeError! " ++ "input" ++ err.path ++ " - " ++ err.message;
-
   (
     switch (cat_decode(json)) {
-    | Result.Error(err) => formatError(err)
+    | Result.Error(err) =>
+      "DecodeError! " ++ "input" ++ err.path ++ " - " ++ err.message
+
     | Result.Ok(cat) => "cat decoded! color is " ++ colorToString(cat)
     }
   )
