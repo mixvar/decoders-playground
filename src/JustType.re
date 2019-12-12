@@ -21,18 +21,19 @@ let colorToString = cat =>
   | Other => "other"
   };
 
-let handleCatJson = json => {
-  (
-    switch (cat_decode(json)) {
+let handleCatResult = result => {
+  Decco.(
+    switch (result) {
     | Result.Error(err) =>
       "DecodeError! " ++ "input" ++ err.path ++ " - " ++ err.message
 
     | Result.Ok(cat) => "cat decoded! color is " ++ colorToString(cat)
     }
-  )
-  |> Js.log;
+  );
 };
 
 {|{"name": "Behemoth", "color": ["Black"], "livesLeft": 7, "masters": ["Woland"]}|}
 |> Js.Json.parseExn
-|> handleCatJson;
+|> cat_decode
+|> handleCatResult
+|> Js.log;
