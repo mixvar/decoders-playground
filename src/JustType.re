@@ -22,7 +22,8 @@ let colorToString = cat =>
   };
 
 let handleCatJson = json => {
-  let formatError = (err: Decco.decodeError) =>
+  open Decco;
+  let formatError = err =>
     "DecodeError! " ++ "input" ++ err.path ++ " - " ++ err.message;
 
   (

@@ -16,7 +16,7 @@ const isStringArray = (val: unknown): val is string[] =>
   Array.isArray(val) && val.every(el => typeof el === "string");
 
 const isValidCat = (data: unknown): data is Cat => {
-  if (typeof data !== "object") return false;
+  if (typeof data !== "object" || data == null) return false;
 
   if ((data as Cat).name != null && typeof (data as Cat).name !== "string")
     return false;
